@@ -21,6 +21,8 @@ app.get('/', async (req, res) => {
   })
 })
 
+/* API INTEGRATION */
+
 app.post('/', async (req, res) => {
   try {
     const prompt = req.body.prompt;
@@ -44,5 +46,7 @@ app.post('/', async (req, res) => {
     res.status(500).send(error || 'Something went wrong');
   }
 })
+
+/* STARTING EXPRESS SERVER */
 
 app.listen(5000, () => console.log('AI server started on http://localhost:5000'))

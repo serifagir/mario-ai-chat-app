@@ -6,6 +6,8 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval;
 
+/* 3 DOTS LOADING FUNCTION */
+
 function loader(element) {
     element.textContent = ''
 
@@ -18,6 +20,8 @@ function loader(element) {
         }
     }, 300);
 }
+
+/* TEXT ANIMATION FUNCTION  */
 
 function typeText(element, text) {
     let index = 0
@@ -32,6 +36,8 @@ function typeText(element, text) {
     }, 20)
 }
 
+/* CREATING UNIQUE ID AI'S ANSWERS */
+
 
 function generateUniqueId() {
     const timestamp = Date.now();
@@ -41,6 +47,7 @@ function generateUniqueId() {
     return `id-${timestamp}-${hexadecimalString}`;
 }
 
+/* TEXT CONTAINER */
 function chatStripe(isAi, value, uniqueId) {
     return (
         `
@@ -58,6 +65,8 @@ function chatStripe(isAi, value, uniqueId) {
     `
     )
 }
+
+/* BACKEND SECTION - CONNECTING TO BACKEND */
 
 const handleSubmit = async (e) => {
     e.preventDefault()
